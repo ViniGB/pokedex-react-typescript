@@ -1,0 +1,48 @@
+.nav-section {
+  display: flex;
+}
+
+.default-link {
+  background-color: rgb(247, 247, 247);
+  border: 1px solid rgb(231, 231, 231);
+  box-shadow: 0 4px 2px -2px rgb(204, 204, 204);
+  color: rgb(252, 33, 62);
+  display: flex;
+  flex-grow: 1;
+  font-family: Georgia , Times New Roman , Times , serif;
+  font-size: 28px;
+  font-weight: 900;
+  justify-content: center;
+  padding: 20px;
+  text-decoration: unset;
+}
+
+.pokedex-link {
+  background-color: rgb(252, 33, 62);
+  border: 1px solid rgb(231, 231, 231);
+  box-shadow: 0 4px 2px -2px rgb(204, 204, 204);
+  color: white;
+  display: flex;
+  flex-grow: 1;
+  font-family: Georgia , Times New Roman , Times , serif;
+  font-size: 28px;
+  font-weight: 900;
+  justify-content: center;
+  padding: 20px;
+  text-decoration: unset;
+}
+
+.favorites-link {
+  background-color: rgb(252, 33, 62);
+  border: 1px solid rgb(231, 231, 231);
+  box-shadow: 0 4px 2px -2px rgb(204, 204, 204);
+  color: white;
+  display: flex;
+  flex-grow: 1;
+  font-family: Georgia , Times New Roman , Times , serif;
+  font-size: 28px;
+  font-weight: 900;
+  justify-content: center;
+  padding: 20px;
+  text-decoration: unset;
+}

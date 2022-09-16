@@ -1,0 +1,40 @@
+.header-section {
+  align-items: center;
+  align-content: space-between;
+  background-color: rgb(139, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 10px;
+}
+
+#squirtle {
+  width: 100px;
+  height: 100px;
+}
+
+#bulbasaur {
+  width: 100px;
+  height: 100px;
+}
+
+#charmander {
+  width: 100px;
+  height: 100px;
+}
+
+#blastoise {
+  width: 100px;
+  height: 100px;
+}
+
+#venusaur {
+  width: 100px;
+  height: 100px;
+}
+
+
+#charizard {
+  width: 100px;
+  height: 100px;
+}
