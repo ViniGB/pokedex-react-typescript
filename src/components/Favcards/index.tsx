@@ -1,0 +1,1 @@
+export { Favcards } from './Favcards';

@@ -1,3 +1,4 @@
+import { IPokeTypes } from "../../interfaces/IPokeTypes";
 import { ITypes } from "../../interfaces/ITypes";
 import { getPokemons, listPokemons } from "../services/api";
 
@@ -18,16 +19,10 @@ export const fetchPokemons = async (
   }
   setPokemons(result);
   setLoading(false);
-  // setPokemons(arrayPokemons);
 }
 
 const fetchByPokemons = async (currIntURL: string, number: number[]) => {
-  const { results } = await getPokemons(currIntURL, `?limit=${number[1]}&offset=${number[0]}`);
-  // let arrayPokemons: object[] = [];
-  // for (let index = number[0]; index < number[1]; index += 1) {
-  //   const poke = await listPokemons(results[index].url);
-  //   arrayPokemons.push(poke);
-  // }
+  const { results } = await getPokemons(currIntURL, `?limit=30&offset=${number[0]}`);
   const detailedPokemons = Promise.all(results.map((pokemon: ITypes) => {
     const poke = listPokemons(pokemon.url);
     return poke;
@@ -36,23 +31,28 @@ const fetchByPokemons = async (currIntURL: string, number: number[]) => {
 }
 
 const fetchByTypes = async (currIntURL: string, number: number[]) => {
-  const { results } = await getPokemons(currIntURL, '');
-  let arrayPokemons: object[] = [];
+  const { pokemon } = await getPokemons(currIntURL, '');
+  let arrayPokemons: IPokeTypes[] = [];
   for (let index = number[0]; index < number[1]; index += 1) {
-    arrayPokemons.push(results[index]);
+    if (pokemon[index]) arrayPokemons.push(pokemon[index]);
   }
-  const detailedPokemons = Promise.all(arrayPokemons.map((pokemon: any) => {
-    const poke = listPokemons(pokemon.url);
-    return poke;
+  console.log(arrayPokemons);
+  const detailedPokemons = Promise.all(arrayPokemons.map((pokemon: IPokeTypes) => {
+    if (pokemon !== undefined) {
+      const poke = listPokemons(pokemon.pokemon.url);
+      return poke;
+    }
+    return null;
   }));
   return detailedPokemons;
 }
 
-// export const fetchLocalPokemons = (pokemons: IPokemon[], number: number[], setLocalPokemons: any) => {
-//   let arrayPokemons: object[] = [];
-//   for (let index = number[0]; index < number[1]; index += 1) {
-//     const currPoke = pokemons.filter((pokemon) => pokemon.id === index)
-//     arrayPokemons.push(...currPoke);
-//   }
-//   setLocalPokemons(arrayPokemons);
-// }
+export const searchPokemonByName = async (
+  setPokemons: any, 
+  pokeName: string, 
+  setLoading: any, 
+) => {
+  const pokemon = await getPokemons('pokemon', pokeName);
+  setPokemons([pokemon]);
+  setLoading(false);
+}

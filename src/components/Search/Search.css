@@ -1,5 +1,8 @@
 .pokemon-search-section {
+  align-items: center;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .pokemon-form-section {
@@ -52,7 +55,10 @@
   margin-top: 10px;
 }
 
-.type-button {
+.type-button,
+.nav-buttons,
+.nav-buttons-disabled
+{
   align-items: center;
   background-color: rgb(247, 120, 17);
   border-radius: 6px;
@@ -65,9 +71,27 @@
   width: 80px;
 }
 
-.type-button:hover {
+.type-button:hover,
+.nav-buttons:hover
+{
   background-color: rgb(95, 1, 9);
   border-radius: 6px;
   color: rgb(223, 223, 223);
   cursor: pointer;
+}
+
+.navigation-buttons {
+  margin-top: 20px;
+}
+
+.nav-buttons {
+  background-color: rgb(76, 76, 238);
+}
+
+.nav-buttons:hover {
+  background-color: rgb(8, 8, 54);
+}
+
+.nav-buttons-disabled {
+  background-color: rgb(170, 170, 245);
 }

@@ -1,28 +1,35 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { PokedexContext } from '../../context/pokedex';
 import { IPokemon } from '../../interfaces/IPokemon';
-import './Cards.css'
+import { getLocalStorage } from '../Utils/fetchFavorites';
+import '../Cards/Cards.css';
+import './Favcards.css';
 
-export const Cards: React.FC = () => {
-  const {
-    pokemons,
-    loading
-  } = useContext(PokedexContext)
+export const Favcards: React.FC = () => {
+  const [favoritePokemons, setFavoritePokemons] = useState<IPokemon[]>([]);
+  const [favLoading, setFavLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const favoritePokemons = getLocalStorage('favoritePokemons');
+    if (favoritePokemons) {
+      setFavoritePokemons(favoritePokemons);
+      setFavLoading(false);
+    }
+  }, []);
 
   return (
     <>
-      { loading 
+      { favLoading 
         ? <h1>Loading</h1>
         : (
-            <div className='card-section'>
-              { pokemons && pokemons.map((poke: IPokemon) => (
+            <div className='card-fav-section'>
+              { favoritePokemons && favoritePokemons.map((poke: IPokemon) => (
                 <Link
                   to={ `/details/${poke.id}` }
                   key={poke.id}
                   className='poke-cards'
                 >
-                  <div className={`card-image-section ${poke.types[0].type.name}`}>
+                  <div className='card-image-section'>
                     <img 
                       src={poke.sprites.other.home.front_default}
                       alt={poke.name}
