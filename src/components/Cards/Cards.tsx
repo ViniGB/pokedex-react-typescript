@@ -13,8 +13,6 @@ export const Cards: React.FC = () => {
     loading
   } = useContext(PokedexContext)
   
-  console.log(pokemons);
-  
   // useEffect(() => {
   //   if (pokemons.length > 0) {
   //     fetchLocalPokemons(pokemons, number, setLocalPokemons);
@@ -35,15 +33,15 @@ export const Cards: React.FC = () => {
                 >
                   <div className='card-image-section'>
                     <img 
-                      src={poke.sprites.front_default}
+                      src={poke.sprites.other.home.front_default}
                       alt={poke.name}
                       className='card-image'
                     />
                     <span id='id'>#{poke.id}</span>
                   </div>
                   <div className='card-info-section'>
-                    <span>{poke.name}</span>
-                    <span>{poke.types.map((type) => type.type.name)}</span>
+                    <span id='name'>{poke.name}</span>
+                    <span id='types'>{poke.types.map((type) => type.type.name)}</span>
                   </div>
                 </Link>
                 // <div>

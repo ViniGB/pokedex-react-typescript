@@ -1,0 +1,28 @@
+.pokemon-details-section {
+  border: 1px solid rgb(224, 228, 235);
+  border-radius: 30px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06) , 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  margin-top: 60px;
+  max-width: 1000px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.pokemon-details-img {
+  background-color: rgb(127, 255, 212, 0.7);
+  border-radius: 30px;
+  width: 500px;
+}
+
+.pokemon-details-card {
+  background-color: rgb(255, 255, 255, 0.7);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 500px;
+}

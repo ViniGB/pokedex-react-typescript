@@ -10,6 +10,7 @@ export const Search: React.FC = () => {
   const [currIntURL, setCurrIntURL] = useState<string>('pokemon');
   const [typesLoading, setTypesLoading] = useState<Boolean>(false);
   const [types, setTypes] = useState<string[]>([]);
+  const [type, setType] = useState<string>('All');
   const {
     setPokemons,
     setLoading,
@@ -22,6 +23,23 @@ export const Search: React.FC = () => {
       setTypesLoading(false);
     }
   }, [number]);
+
+  const handleClick = (event: any) => {
+    const id = event.target.id;
+    if (id !== type) {
+      setType(id);
+      if (id === 'All') {
+        setCurrIntURL('pokemon');
+        setLoading(true);
+        return fetchPokemons(setPokemons, number, setLoading, currIntURL);
+      } else {
+        setCurrIntURL(`type/${id}`);
+        setLoading(true);
+        return fetchPokemons(setPokemons, number, setLoading, currIntURL);
+      }
+    }
+    return null;
+  };
 
   return (
     typesLoading
@@ -46,7 +64,9 @@ export const Search: React.FC = () => {
             { types.map((type) => (
               <button
                 key={ type }
+                id={ type }
                 className='type-button'
+                onClick={ handleClick }
               >
                 { type }
               </button>
