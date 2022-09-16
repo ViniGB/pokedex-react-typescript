@@ -1,5 +1,4 @@
 import React, { useState, createContext, Dispatch, SetStateAction } from 'react';
-// import { IPokemon } from '../interfaces/IPokemon';
 
 interface PokedexContextData {
   pokemons: [];

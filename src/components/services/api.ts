@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { IPokemon } from '../../interfaces/IPokemon';
 
 export const api = axios.create({
   baseURL: 'https://pokeapi.co/api/v2'

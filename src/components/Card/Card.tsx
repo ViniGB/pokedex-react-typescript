@@ -7,7 +7,6 @@ import FilledStar from '../../images/filledStar.png';
 import './Card.css';
 import { getLocalStorage } from '../Utils/fetchFavorites';
 import { IPokemon } from '../../interfaces/IPokemon';
-// import { IPokemon } from '../../interfaces/IPokemon';
 
 export const Card: React.FC = () => {
   const [pokemon, setPokemon] = useState<IPokemonDetails[]>([]);
