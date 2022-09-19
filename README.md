@@ -1,5 +1,11 @@
 # React Typescript Pokedex
 
+
+
+https://user-images.githubusercontent.com/92736867/190951643-14c1da93-1b79-4646-9676-9a471cb6431b.mp4
+
+
+
 Projeto de uma Pokedéx que utiliza a [Poke API](https://pokeapi.co/) para buscar, detalhar e favoritar pokemons.
 
 ## Regras de negócio
