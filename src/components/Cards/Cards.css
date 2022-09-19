@@ -10,9 +10,13 @@
 }
 
 .card-section {
+  background: url('../../images/pokeball.png') no-repeat; 
+  background-position: center top;
+  background-size: 100% auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100vw;
 }
 
 .card-image-section {
@@ -55,57 +59,4 @@
 #types {
   font-size: 15px;
   margin-bottom: 5px;
-}
-
-.normal {
-  background-color: rgba(255, 255, 255, 0.89);
-}
-
-.fighting,
-.ground,
-.rock {
-  background-color: rgba(226, 129, 64, 0.534);
-}
-
-.flying {
-  background-color: rgba(255, 255, 255, 0.89);
-}
-
-.bug,
-.grass {
-  background-color: rgba(58, 226, 58, 0.6);
-}
-
-.poison,
-.ghost,
-.psychic {
-  background-color: rgba(156, 25, 156, 0.6);
-}
-
-.steel {
-  background-color: rgba(191, 191, 191, 0.6);
-}
-
-.fire {
-  background-color: rgba(250, 74, 43, 0.8);
-}
-
-.water {
-  background-color: rgba(0, 68, 255, 0.6);
-}
-
-.electric {
-  background-color: rgba(255, 255, 0, 0.6);
-}
-
-.ice {
-  background-color: rgba(69, 223, 250, 0.8);
-}
-
-.dragon {
-  background-color: rgb(255, 215, 0, 0.8);
-}
-
-.dark {
-  background-color: rgb(49, 49, 49, 0.8);
 }

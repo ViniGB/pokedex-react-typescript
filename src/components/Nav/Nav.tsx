@@ -3,8 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import './Nav.css';
 
 export const Nav: React.FC = () => {
-  const location = useLocation();
-  const { pathname } = location;
+  const { pathname } = useLocation();
 
   const pokedexLink = pathname === '/'
     ? 'pokedex-link'

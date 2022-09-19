@@ -2,9 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { PokedexContext } from '../../context/pokedex';
 import { ITypes } from '../../interfaces/ITypes';
 import { getPokemons } from '../services/api';
-import { getLocalStorage } from '../Utils/fetchFavorites';
+import { getFavoritePokemons } from '../Utils/getFavoritePokemons';
 import { fetchPokemons, searchPokemonByName } from '../Utils/fetchPokemons';
 import './Search.css'
+import { Loading } from '../Loading';
 
 export const Search: React.FC = () => {
   const [number, setNumber] = useState<number[]>([0, 30]);
@@ -22,7 +23,7 @@ export const Search: React.FC = () => {
   } = useContext(PokedexContext);
 
   useEffect(() => {
-    const favoritePokemon = getLocalStorage('favoritePokemons');
+    const favoritePokemon = getFavoritePokemons('favoritePokemons');
     if (favoritePokemon === null) localStorage.setItem('favoritePokemons', JSON.stringify([]));
     if (type !== 'search') fetchPokemons(setPokemons, number, setLoading, currIntURL);
     getPokemons('type', '')
@@ -78,7 +79,7 @@ export const Search: React.FC = () => {
 
   return (
     typesLoading
-      ? <h1>Loading</h1>
+      ? <Loading />
       : (
         <div className='pokemon-search-section'>
           <form className='pokemon-form-section'>

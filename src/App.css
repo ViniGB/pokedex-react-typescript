@@ -1,8 +1,56 @@
-body { 
-  background: url('../src/images/pokeball.png') no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position-y: 250px;
+body {
+  margin: 0;
+}
+
+.normal {
+  background-color: rgba(255, 255, 255, 0.89) !important;
+}
+
+.fighting,
+.ground,
+.rock {
+  background-color: rgba(226, 129, 64, 0.534) !important;
+}
+
+.flying {
+  background-color: rgba(255, 255, 255, 0.89) !important;
+}
+
+.bug,
+.grass {
+  background-color: rgba(58, 226, 58, 0.6) !important;
+}
+
+.poison,
+.ghost,
+.psychic {
+  background-color: rgba(156, 25, 156, 0.6) !important;
+}
+
+.steel {
+  background-color: rgba(191, 191, 191, 0.6) !important;
+}
+
+.fire {
+  background-color: rgba(250, 74, 43, 0.8) !important;
+}
+
+.water {
+  background-color: rgba(0, 68, 255, 0.6) !important;
+}
+
+.electric {
+  background-color: rgba(255, 255, 0, 0.6) !important;
+}
+
+.ice {
+  background-color: rgba(69, 223, 250, 0.8) !important;
+}
+
+.dragon {
+  background-color: rgb(255, 215, 0, 0.8) !important;
+}
+
+.dark {
+  background-color: rgb(49, 49, 49, 0.8) !important;
 }

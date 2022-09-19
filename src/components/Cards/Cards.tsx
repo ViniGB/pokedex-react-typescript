@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { PokedexContext } from '../../context/pokedex';
 import { IPokemon } from '../../interfaces/IPokemon';
+import { PokeLoading } from '../PokeLoading';
 import './Cards.css'
 
 export const Cards: React.FC = () => {
@@ -13,7 +14,7 @@ export const Cards: React.FC = () => {
   return (
     <>
       { loading 
-        ? <h1>Loading</h1>
+        ? <PokeLoading />
         : (
             <div className='card-section'>
               { pokemons && pokemons.map((poke: IPokemon) => (

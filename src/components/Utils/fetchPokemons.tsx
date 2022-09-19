@@ -12,8 +12,7 @@ export const fetchPokemons = async (
   if (currIntURL === 'pokemon') {
     const pokes = await fetchByPokemons(currIntURL, number);
     result = pokes;
-  } 
-  else {
+  } else {
     const pokes = await fetchByTypes(currIntURL, number);
     result = pokes
   }

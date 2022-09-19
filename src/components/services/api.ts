@@ -6,8 +6,8 @@ export const api = axios.create({
 
 export async function getPokemons(intURL: string, searchTerm: string) {
   try {
-    const result = await api.get(`/${intURL}/${searchTerm}`);
-    return result.data;
+    const { data } = await api.get(`/${intURL}/${searchTerm}`);
+    return data;
   } catch (err: any) {
     console.log(err);
     throw new Error(err);
@@ -18,8 +18,8 @@ export const listApi = axios.create();
 
 export async function listPokemons(url: string) {
   try {
-    const result = await listApi.get(url);
-    return result.data;
+    const { data } = await listApi.get(url);
+    return data;
   } catch (err: any) {
     console.log(err);
     throw new Error(err);
