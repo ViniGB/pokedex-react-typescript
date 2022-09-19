@@ -65,6 +65,7 @@ export const Search: React.FC = () => {
   const handleSearchClick = () => {
     setType('search');
     searchPokemonByName(setPokemons, pokeName, setLoading);
+    setPokeName('');
   };
 
   const handlePreviousClick = () => {

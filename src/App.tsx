@@ -8,15 +8,15 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <PokeAppProvider>
+    <PokeAppProvider>
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={ <Home /> } />
           <Route path='/favorites' element={ <Favorites /> } />
           <Route path='/details/:id' element={ <Details /> } /> 
         </Routes>
-      </PokeAppProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </PokeAppProvider>
   )
 }
 

@@ -16,7 +16,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100vw;
+  min-height: 550px;
 }
 
 .card-image-section {
