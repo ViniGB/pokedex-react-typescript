@@ -22,12 +22,14 @@ export const Cards: React.FC = () => {
                 to={ `/details/${poke.id}` }
                 key={poke.id}
                 className='poke-cards'
+                data-testid='pokemons-cards'
               >
                 <div className={`card-image-section ${poke.types[0].type.name}`}>
                   <img 
                     src={poke.sprites.other.home.front_default}
                     alt={poke.name}
                     className='card-image'
+                    data-testid='pokemon-image'
                   />
                   <span id='id'>#{poke.id}</span>
                 </div>

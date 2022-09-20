@@ -29,6 +29,7 @@ export const Favcards: React.FC = () => {
                   to={ `/details/${poke.id}` }
                   key={poke.id}
                   className='poke-cards'
+                  data-testid='fav-pokemons'
                 >
                   <div className={`card-image-section ${poke.types[0].type.name}`}>
                     <img 
@@ -39,7 +40,12 @@ export const Favcards: React.FC = () => {
                     <span id='id'>#{poke.id}</span>
                   </div>
                   <div className='card-info-section'>
-                    <span id='name'>{poke.name}</span>
+                    <span 
+                      id='name'
+                      data-testid={`${poke.name}-name-span`}
+                    >
+                      {poke.name}
+                    </span>
                     <span id='types'>{poke.types.map((type) => type.type.name).join(', ')}</span>
                   </div>
                 </Link>

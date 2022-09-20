@@ -9,7 +9,6 @@ export async function getPokemons(intURL: string, searchTerm: string) {
     const { data } = await api.get(`/${intURL}/${searchTerm}`);
     return data;
   } catch (err: any) {
-    console.log(err);
     throw new Error(err);
   }
 };
@@ -21,7 +20,6 @@ export async function listPokemons(url: string) {
     const { data } = await listApi.get(url);
     return data;
   } catch (err: any) {
-    console.log(err);
     throw new Error(err);
   }
 }
