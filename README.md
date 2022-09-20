@@ -70,3 +70,18 @@ React Testing Library
 
   [http://localhost:3000](http://localhost:3000) para ver no browser.
 </details>
+ 
+<details>
+  <summary><strong> Para rodar os testes </strong></summary>
+  </br>
+
+  Acesse o diretório criado:
+  ```sh
+  $ cd pokedex-react-typescript
+  ```
+  
+  Rode os testes:
+  ```sh
+  $ npm test
+  ```
+</details>
